@@ -27,7 +27,7 @@ class Login extends React.Component {
             //setCurrentUser which is a prop
 
             setCurrentUser(response.data);
-            history.push('/');
+            history.push('/feed');
         }).catch(() => {
             toast.error('Invalid Login');
         })
@@ -46,10 +46,8 @@ class Login extends React.Component {
 
                 <button type="submit">Login</button>
             </form>
-            <p>
-                Don't have an account?
-                <Link to="/signup">Signup</Link>
-            </p>
+            <p>Don't have an account?</p> 
+            <p>Don't worry, join us <Link to="/signup">here</Link>...we have cookies ^^</p>
         </>
         )
     }

@@ -10,7 +10,6 @@ class ListAnimes extends React.Component {
 
     componentDidMount() {
         getAllAnimes().then((response) => {
-   
             this.setState({
                 animes: response.data
             })
@@ -22,12 +21,12 @@ class ListAnimes extends React.Component {
         return (
            // <Ul primary>
            <ul>
-                {animes.map((anime) => {
-                return (<li key={anime._id}>
-                       <Link to={`/animes/${anime._id}`}>{anime.titles} 
-                     {/*   <Image src={anime.posterImage} /> */} 
+                {animes.map((anime, index) => {
+                return (<li key={index}>
+                       <Link to={`/animes/${anime.id}`}>{anime.slug} 
+                       <img src={anime.posterImage.tiny} /> 
                        </Link>
-
+                        
                     </li>)
                     
                 })}

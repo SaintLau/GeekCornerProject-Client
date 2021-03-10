@@ -27,3 +27,8 @@ export const logout = () => {
 export const loggedin = () => {
     return axios.get(`${baseURL}/loggedin`, {withCredentials: true});
 }
+
+//profile
+export const profile = () => {
+    return axios.get(`${baseURL}/profile`, {withCredentials: true});
+}

@@ -1,65 +1,63 @@
+import { render } from '@testing-library/react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { logout } from '../api/auth';
 
 function NavBar({ loggedInUser, setCurrentUser, history }) { 
-    
+
     const logoutUser = () => {
         logout()
         .then(() => {
             setCurrentUser(null);
-           // history.push('/'); //when logout, goes to initial page, but we declare it below so we don't need this one here
         })
     }
 
 
     return loggedInUser ? (
                <>
-                 <p>Welcome {loggedInUser.username}</p>
-                      <ul>
-                        <li>
+                <nav className='navbar navbar-dark bg-dark mb-3'>
+                     <div className='container'>
+                     <a className='navbar-link'>
+                         <p>Welcome, <NavLink to="/profile">{loggedInUser.username}</NavLink></p>
+                      </a>
+
+                    <a className='navbar-link'>
+                        <NavLink to="/community">
+                         <button>Community</button>   
+                        </NavLink>  
+                    </a>
+                    <a className='navbar-link'>
                             <NavLink to="/">
                                 <button onClick={logoutUser}>Logout</button>
-                            </NavLink>
-                        </li>
-                            <li>
-                                <NavLink activeStyle={{color: "red"}} exact to={"/projects"}>
-                                    Projects
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink activeStyle={{color: "red"}} exact to={"/projects/add"}>
-                                    Add Projects
-                                </NavLink>
-                            </li>
-                        </ul>
-
+                            </NavLink> 
+                    </a>
+                            
+                    </div>
+                 </nav>
                 </>
         )
     : (
         <>
-            <ul>
-            <li>
-               <NavLink activeStyle={{color: "red"}} exact to={"/login-google"}>
-                    Login With Google
-               </NavLink>
-            </li>
-            <li>
-               <NavLink activeStyle={{color: "red"}} exact to={"/login"}>
-                    Login
-               </NavLink>
-            </li>
-            <li>
-               <NavLink activeStyle={{color: "red"}} exact to={"/signup"}>
-                    Signup
-               </NavLink>
-            </li>
-            <li>
-               <NavLink activeStyle={{color: "red"}} exact to={"/projects"}>
-                    Projects
-               </NavLink>
-            </li>
-            </ul>
+            <nav className='navbar navbar-dark bg-dark mb-3'>
+                <div className='container'>
+                    <a className='navbar-link' >
+                     <NavLink activeStyle={{color: "light-blue"}} exact to={"/login-google"}>
+                        Login With Google
+                    </NavLink>
+                     </a>
+                     <a className='navbar-link'> 
+                    <NavLink activeStyle={{color: "light-blue"}} exact to={"/login"}>
+                        Login
+                    </NavLink>
+                    </a>
+            
+                    <a className='navbar-link'>
+                    <NavLink activeStyle={{color: "light-blue"}} exact to={"/signup"}>
+                        Signup
+                    </NavLink>
+                    </a>
+                </div>
+             </nav>
         </>
     )
 }

@@ -4,9 +4,9 @@ import { toast } from 'react-toastify';
 
 class AddAnime extends React.Component {
     state = {
-        titles:'',
+        title:'',
         synopsis: '',
-        posterImage: 'http://some' //just to skip the error
+        image: '' 
     }
     handleChange = (event) => {
         let { name, value, type } = event.target;
@@ -28,7 +28,7 @@ class AddAnime extends React.Component {
             const newAnime = {
                 titles: titles,
                 synopsis: synopsis,
-                posterImage: response.data.fileUrl
+                image: response.data.fileUrl
             }
             
             addAnime(newAnime).then(() => {
@@ -47,11 +47,11 @@ class AddAnime extends React.Component {
     }
 
     render() {
-        const { titles, synopsis } = this.state;
+        const { title, synopsis } = this.state;
         return (
             <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
                 <label>Title</label>
-                <input type="text" name="name" value={titles} onChange={this.handleChange}/>
+                <input type="text" name="name" value={title} onChange={this.handleChange}/>
 
                 <label>Synopsis</label>
                 <input type="text" name="synopsis" value={synopsis} onChange={this.handleChange} />

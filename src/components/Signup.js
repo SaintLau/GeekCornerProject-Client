@@ -37,8 +37,8 @@ class Signup extends React.Component {
                     <input type="password" name="password" value={password} onChange={this.handleChange} />
                     <button>Signup</button>
                 </form>
-                <p>Already have account? 
-                    <Link to={"/login"}>Login</Link>
+                <p>So, you already have an account</p>
+                <p> but stepped on the dark side? Click <Link to={"/login"}>here</Link>
                 </p>
           </div>
         )

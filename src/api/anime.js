@@ -27,3 +27,10 @@ export const uploadFile = (uploadData) => {
     return axios.post(`${baseURL}/upload`, uploadData);
 }
 
+export const toggleFavorite = (id) => {
+    return axios.put(`${baseURL}/animes/favorite/${id}`, null, { withCredentials: true});
+}
+
+export const getUserFavorites = () => {
+    return axios.get(`${baseURL}/animes/user`, { withCredentials: true});
+}

@@ -1,21 +1,30 @@
 import React from 'react';
-import { deleteAnime, getAnime } from '../../api/anime';
+import { deleteAnime, getAnime, toggleFavorite, getUserFavorites } from '../../api/anime';
 
 class AnimeDetails extends React.Component {
     state = {
         id: '',
-        titles: '',
-        synopsis: ''
+        title: '',
+        synopsis: '',
+        image: '',
+        favorites: []
     }
 
     componentDidMount() {
-        const animeId = this.props.match.params.id; //id is because of the route on app.js
+         //id is because of the route on app.js
+        const animeId = this.props.match ? this.props.match.params.id : this.props.id
         getAnime(animeId).then((response) => {
             this.setState({
-                id: response.data._id,
-                titles: response.data.titles,
-                synopsis: response.data.synopsis
+                id: response.data.id,
+                title: response.data.titles.en,
+                synopsis: response.data.synopsis,
+                image: response.data.coverImage.tiny
             })
+            getUserFavorites().then((response) => {
+                this.setState({
+                    favorites: response.data
+                })
+            });
         });
     }
 
@@ -26,17 +35,37 @@ class AnimeDetails extends React.Component {
         })
     }
 
+    handleToggleFavorite = (id) => {
+        toggleFavorite(id).then((response) => {
+            this.setState({
+                favorites: response.data
+            })
+        }) 
+        if (this.props.handleRemoveFavorite)  {
+            this.props.handleRemoveFavorite();
+        } 
+    }
+
+    isFavorite = (id) => {
+        return this.state.favorites.indexOf(id) > -1;
+    }
+
     render() {
-        const { id, titles, synopsis } = this.state;
+        const { id, title, synopsis, image } = this.state;
         return(
             <>
-                <h2>{titles}</h2>
+                <h2>{title}</h2>
                 <h3>{synopsis}</h3>
-                <button onClick={() => this.handleDeleteAnime(id)}>Delete</button>
-                <button onClick={() => {
-                    this.props.history.push(`/animes/${id}/edit`);
-                }}>Edit Project</button>
+                <img src={image} />
+                <button onClick={() => this.handleToggleFavorite(id)}>
+                    { 
+                    this.isFavorite(id) 
+                    ? "remove favorite"
+                    : "add favorite"
+                    }
+                </button>
             </>
+
         )
     }
 }
