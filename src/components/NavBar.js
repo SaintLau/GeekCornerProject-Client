@@ -21,14 +21,26 @@ function NavBar({ loggedInUser, setCurrentUser, history }) {
                          <p>Welcome, <NavLink to="/profile">{loggedInUser.username}</NavLink></p>
                       </a>
 
+                      <a className='navbar-link'>
+                         <NavLink to="/feed">
+                            <button class="btn btn-info">My Feed</button>   
+                         </NavLink>  
+                     </a>
+                    
+                      <a className='navbar-link'>
+                         <NavLink to="/animes">
+                            <button class="btn btn-info">Animes</button>   
+                         </NavLink>  
+                     </a>
+
                     <a className='navbar-link'>
                         <NavLink to="/community">
-                         <button>Community</button>   
+                         <button class="btn btn-info">Community</button>   
                         </NavLink>  
                     </a>
                     <a className='navbar-link'>
                             <NavLink to="/">
-                                <button onClick={logoutUser}>Logout</button>
+                                <button class="btn btn-info" onClick={logoutUser}>Logout</button>
                             </NavLink> 
                     </a>
                             

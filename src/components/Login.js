@@ -40,15 +40,22 @@ class Login extends React.Component {
             <form onSubmit={this.handleFormSubmit}>
                 <label>Username</label>
                 <input type="text" name="username" onChange={this.handleChange} value={username} />
-
+                
                 <label>Password</label>
                 <input type="password" name="password" onChange={this.handleChange} value={password} />
 
-                <button type="submit">Login</button>
+                <button type="submit" class="btn btn-info">Login</button>
+                <img src="/pikachu.png" alt="imageIntro" />
             </form>
+       
+            <div className="log">
+                 <div class="container"> 
             <p>Don't have an account?</p> 
             <p>Don't worry, join us <Link to="/signup">here</Link>...we have cookies ^^</p>
-        </>
+          </div>
+        </div> 
+        
+    </>
         )
     }
 }

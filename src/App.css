@@ -2,9 +2,40 @@
   text-align: center; 
 }
 
+.list-anime {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.anime-name {
+  width: 40vw;  
+}
+
 /*for the HomePage */
+.master {
+  background-color: black;
+}
+
+.image {
+   width: 100%;
+   height: auto;
+   object-fit: cover;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
 .who-div {
-  
+  align-content:space-around;
+  text-align: left;
+  border: 2px solid black;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }
 
 .who {
@@ -13,62 +44,126 @@
   color: white;
   float: left;
   margin-top: 100px;
+  margin-left: 180px;
 }
 
 .who-p {
   font-family: "Verdana", sans-serif;
   color: white;
-  float: left;
-  text-align: left;
+  text-align: center;
   margin-top: 100px;
-  margin-left: 50px;
+  margin-left: 300px;
   height: 50px;
-}
-
-.who-pp {
-  color: white;
-  float: left;
-  text-align: left;
-  margin-top: 200px;
-  margin-left: -250px;
-  height: 150px;
 }
 
 .who-pic {
   border-radius: 8px;
-  max-width: 100%;
-  height: auto;
-  /* display: block; */
-  float: right;
+  max-width: auto;
+  height: 300px;
   margin-left: auto;
-  margin-right: 0;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+.our-div {
+  align-content:space-around;
+  text-align: left;
+  border: 2px solid black;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }
 
 .our-pic {
   max-width: 100%;
   height: auto;
-  float: left;
   margin-right: auto;
-  margin-top: 70px;
+  margin-top: 30px;
+  margin-left: 180px;
 }
 
 .our {
   font-family: "COPPERPLATE", fantasy;
+  font-weight: bold;
   color: white;
-  float: center;
   margin-top: 50px;
+  margin-right: 280px;
+  margin-left: 300px;
+  position: absolute;
 }
 
 .our-p {
+  font-family: "Verdana", sans-serif;
+  color: white;
+  margin-right: 150px;
+  margin-top: 100px;
+}
 
+.why-div {
+  align-content:space-around;
+  text-align: left;
+  border: 2px solid black;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }
 
 .why {
+  font-family: "COPPERPLATE", fantasy;
+  font-weight: bold;
+  color: white;
+  margin-top: 50px;
+  margin-left: 180px;
+}
 
+.why-pic {
+  margin-left: 430px;
 }
 
 .why-p {
+  font-family: "Verdana", sans-serif;
+  color: white;
+  margin-left: 40px;
+  margin-top: 40px;
+  margin-right: 150px;
+}
 
+.pill {
+  margin-left: 470px;
+  margin-top: 40px;
+  height: 100px;
+  width: 1000px;
 }
 
 /*for the HomePageLogin */
+
+
+/* Bottom signup */
+.sign {
+  background-color: blueviolet;
+  width: 200px;
+  margin-left: 860px;
+  border-radius: 8px;
+}
+
+.sign p {
+  color: white;
+}
+
+.log {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: lightskyblue;
+  width: 200px;
+  margin-left: 860px;
+  border-radius: 8px;
+}
+/* Footer */
+.footer {   
+  display: inline-flex;
+  padding-top: 0;
+  padding-bottom: 0;
+  justify-content: space-around;
+}
