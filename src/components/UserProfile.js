@@ -6,6 +6,7 @@ import AnimeDetails from '../components/Animes/AnimeDetails';
 import { NavLink } from 'react-router-dom';
 import Card from 'react-bootstrap/Card'
 import { ListGroup } from 'react-bootstrap';
+import EditAnime from './Animes/EditAnime';
 
 class UserProfile extends React.Component {
     state = {
@@ -44,7 +45,7 @@ class UserProfile extends React.Component {
                         </Card>
 
 
-                
+                <div class="container">
                 <p>Favorite Anime:</p>
                     <div className="animes-fav">
                         {this.state.favorites.map((favorite) => {
@@ -53,36 +54,19 @@ class UserProfile extends React.Component {
                                   <ListGroup horizontal={breakpoint} className="my-2" key={idx}>
                                       <ListGroup.Item variant="info">
                                       <AnimeDetails key={favorite} handleRemoveFavorite={() => this.handleRemoveFavorite(favorite)} id={favorite} />
+                                     {/* <EditAnime />*/} 
                                       </ListGroup.Item>
                                   </ListGroup>
                               ))  
                                 
                             )
                         })}
-                        
+                      </div>  
                     </div>
             </div>
         )
     }
 
 }
-
- 
-{/*}  <p>Favorite Anime:</p>
-<div>
-    <ul>
-    {this.state.favorites.map((favorite) => {
-        return (
-            <AnimeDetails key={favorite} handleRemoveFavorite={() => this.handleRemoveFavorite(favorite)} id={favorite} />
-        )
-    })}
-    </ul>
-</div> 
-
-
-    )
-})}
-</div>
-*/}
 
 export default UserProfile;

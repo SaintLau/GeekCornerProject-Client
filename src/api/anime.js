@@ -34,3 +34,8 @@ export const toggleFavorite = (id) => {
 export const getUserFavorites = () => {
     return axios.get(`${baseURL}/animes/user`, { withCredentials: true});
 }
+
+//for the searchbar
+export const getSearch = () => {
+    return axios.get(`${baseURL}/animes/search`, { withCredentials: true});
+}

@@ -14,7 +14,7 @@ function HomePage() {
                      <img
                          className="d-block w-100"
                          width={900} height={700} alt="900x500"
-                         src="/best-anime.jpg"
+                         src="/anime.jpeg"
                          alt="First slide"
                         />
                 {/* <Carousel.Caption style={{color: 'black'}}>
@@ -26,7 +26,7 @@ function HomePage() {
                      <img
                         className="d-block w-100"
                         width={900} height={700} alt="900x500"
-                         src="/anime.jpeg"
+                         src="/best-anime.jpg"
                         alt="Second slide"
                     />
 

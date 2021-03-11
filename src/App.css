@@ -138,13 +138,24 @@
 }
 
 /*for the HomePageLogin */
-
+.kon {
+  background-color: rgb(20, 177, 240);
+  width: 1000px;
+  height: 200px;
+  margin-top: 10px;
+  margin-left: 450px;
+  margin-right: 500px;
+  margin-bottom: 0px;
+  border-radius: 8px;
+}
 
 /* Bottom signup */
 .sign {
   background-color: blueviolet;
-  width: 200px;
-  margin-left: 860px;
+  width: 250px;
+  height: 100px;
+  margin-left: 780px;
+  margin-bottom: 20px;
   border-radius: 8px;
 }
 
@@ -158,6 +169,17 @@
   background-color: lightskyblue;
   width: 200px;
   margin-left: 860px;
+  border-radius: 8px;
+}
+
+/* Coming Soon */
+.coming {
+  background-color: rgb(225, 147, 232);
+  width: 500px;
+  height: 300px;
+  margin-top: 30px;
+  margin-left: 700px;
+  margin-bottom: 50px;
   border-radius: 8px;
 }
 /* Footer */

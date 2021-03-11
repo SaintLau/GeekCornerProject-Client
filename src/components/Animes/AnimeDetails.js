@@ -1,5 +1,6 @@
 import React from 'react';
 import { deleteAnime, getAnime, toggleFavorite, getUserFavorites } from '../../api/anime';
+import { Link } from 'react-router-dom';
 
 class AnimeDetails extends React.Component {
     state = {
@@ -57,13 +58,17 @@ class AnimeDetails extends React.Component {
                 <h2>{title}</h2>
                 <h3>{synopsis}</h3>
                 <img src={image} />
-                <button onClick={() => this.handleToggleFavorite(id)}>
+                <button variant="outline-info" onClick={() => this.handleToggleFavorite(id)}>
                     { 
                     this.isFavorite(id) 
                     ? "remove favorite"
                     : "add favorite"
                     }
                 </button>
+                <div>
+                    <Link to="/animes">back</Link>
+                </div>
+                
             </>
 
         )

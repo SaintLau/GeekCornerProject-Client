@@ -38,6 +38,13 @@ function NavBar({ loggedInUser, setCurrentUser, history }) {
                          <button class="btn btn-info">Community</button>   
                         </NavLink>  
                     </a>
+
+                    <a className='navbar-link'>
+                         <NavLink to="/">
+                            <button class="btn btn-info">Home</button>   
+                         </NavLink>  
+                     </a>
+                     
                     <a className='navbar-link'>
                             <NavLink to="/">
                                 <button class="btn btn-info" onClick={logoutUser}>Logout</button>
@@ -52,6 +59,13 @@ function NavBar({ loggedInUser, setCurrentUser, history }) {
         <>
             <nav className='navbar navbar-dark bg-dark mb-3'>
                 <div className='container'>
+
+                    <a className='navbar-link'>
+                         <NavLink to="/">
+                            <button class="btn btn-info">Home</button>   
+                         </NavLink>  
+                     </a>
+
                     <a className='navbar-link' >
                      <NavLink activeStyle={{color: "light-blue"}} exact to={"/login-google"}>
                         Login With Google

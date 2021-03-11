@@ -2,6 +2,7 @@ import React from 'react';
 import { getAllAnimes } from '../../api/anime';
 import { Link } from 'react-router-dom';
 import ListGroup from 'react-bootstrap/ListGroup'
+import SearchAnime from './SearchAnime';
 
 
 class ListAnimes extends React.Component {
@@ -20,6 +21,10 @@ class ListAnimes extends React.Component {
     render() {
         const { animes } = this.state;
         return (
+            <div>
+            <div>
+                <SearchAnime />
+            </div>
             <div className="list-anime">
                 {animes.map((anime, index) => {
                     return (
@@ -32,24 +37,9 @@ class ListAnimes extends React.Component {
                     )
                 })}
             </div>
-                 
+         </div>     
 
              
-
-
-/* 
-         <ul>
-                {animes.map((anime, index) => {
-                return (<li key={index}>
-                       <Link to={`/animes/${anime.id}`}>{anime.slug} 
-                       <img src={anime.posterImage.tiny} /> 
-                       </Link>
-                        
-                    </li>)
-                    
-                })}
-               </ul> 
-            */
         )
     }
 }

@@ -9,7 +9,7 @@ class EditAnime extends React.Component {
     }
 
     componentDidMount() {
-        const animeId = this.props.match.params.id;
+        const animeId = this.props.match.params.slug;
         getAnime(animeId).then((response) => {
             this.setState({
                 id: response.data._id,
